@@ -1,14 +1,9 @@
 ﻿SDK-ESP8266 Automação-IOT Documentação
-======================================
+=======================================
 
 If you are looking for the english documentation go to `here`_.
 
 .. _here: http://esp8266sdk-automacaoiot.readthedocs.io
-
-O que é a SDK-ESP8266 Automação-IOT?
-------------------------------------
-
-   Este documento irá mostrar algumas bibliotecas de sensores para serem utilizados em conjunto com a base de dados IOT.
 
 .. toctree::
    :maxdepth: 2
