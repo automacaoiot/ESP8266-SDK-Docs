@@ -5,36 +5,36 @@
 
 Modo de Configuração Manual
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-	
+
 *Recurso Beep* ::
 
 
 	#include <user_config.h>
 	#include <SmingCore/SmingCore.h>
-	#include "device.h"
-	#include "beep.h" 
+	#include "Device.h"
+	#include "Beep.h"
 
 	void _Device();
 	void _Resource();
 
-	DEVICE *Device;
-	BEEP *Beep;
-       
+	Device *device;
+	Beep *beep;
+
 	void _Device()
-	{	
-		Device->start();        
+	{
+		device->start();
 		_Resource();
 	}
 
 	void _Resource()
-	{            
-		Beep->start();
+	{
+		beep->start();
 	}
 
 	//Station connected
 	void connected(IPAddress ip, IPAddress mask, IPAddress gateway)
-	{	
-		debugf("Connected");	
+	{
+		debugf("Connected");
 		_Device();
 	}
 
@@ -47,44 +47,44 @@ Modo de Configuração Manual
 
 	void init()
 	{
-		Device = new DEVICE("SECRET_KEY","PUBLIC_KEY");
-		Beep = new BEEP(IDbeep,GPIOXX);
+		device = new Device("PUBLIC_KEY","SECRET_KEY");
+		beep = new Beep(IDbeep,GPIObeep);
 
-		Device->setNetworkConfig("SSID","PWD");
-	}  
+		device->setNetworkConfig("SSID","PASSWD");
+	}
 
 
 *Recurso Dht* ::
 
 	#include <user_config.h>
 	#include <SmingCore/SmingCore.h>
-	#include "device.h"
-	#include "dht.h"
+	#include "Device.h"
+	#include "Dht.h"
 
-	DEVICE *Device;
-	DHT *Dht;
+	Device *device;
+	Dht *dht;
 
 	void _Device();
 	void _Resource();
 
 	void _Device()
-	{	
-		Device->start();        
+	{
+		device->start();
 		_Resource();
 	}
 
 	void _Resource()
-	{            
-		// DHT    
-		Dht->setFilter(false);
-		Dht->start();             
+	{
+		// DHT
+		dht->setFilter(false);
+		dht->start();
 	}
 
 	//Station connected
 	void connected(IPAddress ip, IPAddress mask, IPAddress gateway)
 	{
-		Device->_ledRGB->color(GREEN);
-		debugf("Connected");	
+		device->_ledRGB->color(GREEN);
+		debugf("Connected");
 		_Device();
 	}
 
@@ -96,45 +96,45 @@ Modo de Configuração Manual
 	}
 
 	void init()
-	{    
-		Device = new DEVICE("SECRET_KEY","PUBLIC_KEY",);		
-		Dht=new DHT(idTemperature,idHumidity,GPIOXX, DHTXX);
-    
-		Device->setConfig(SYS_CPU_160MHZ,NONE_SLEEP_T,SYS_FILES_DISABLED,DEBUG_ENABLED,COMMAND_DISABLED);
-		Device->setNetworkConfig("SSID","PWD");  
-	}  
+	{
+		device = new Device("PUBLIC_KEY","SECRET_KEY");
+		dht=new Dht(idTemperature,idHumidity,GPIOdht, DHTtype);
 
-	
-*Recurso Flame* ::	
+		device->setConfig(SYS_CPU_160MHZ,NONE_SLEEP_T,SYS_FILES_DISABLED,DEBUG_ENABLED,COMMAND_DISABLED);
+		device->setNetworkConfig("SSID","PASSWD");
+	}
+
+
+*Recurso Flame* ::
 
 	#include <user_config.h>
 	#include <SmingCore/SmingCore.h>
-	#include "device.h"
-	#include "flame.h"
+	#include "Device.h"
+	#include "Flame.h"
 
 
 	void _Device();
 	void _Resource();
 
-	DEVICE *Device;
-	FLAME *Flame;
-         
+	Device *device;
+	Flame *flame;
+
 	void _Device()
-	{	
-		Device->start();        
+	{
+		device->start();
 		_Resource();
 	}
 
 	void _Resource()
-	{        
-		Flame->setFilter(true);
-		Flame->start();
+	{
+		flame->setFilter(true);
+		flame->start();
 	}
 
 	//Station connected
 	void connected(IPAddress ip, IPAddress mask, IPAddress gateway)
-	{	
-		debugf("Connected");	
+	{
+		debugf("Connected");
 		_Device();
 	}
 
@@ -147,41 +147,42 @@ Modo de Configuração Manual
 
 	void init()
 	{
-		Device = new DEVICE("SECRET_KEY","PUBLIC_KEY",);
-		Flame = new FLAME(IDflame,GPIOXX);
-	
-		Device->setConfig(SYS_CPU_160MHZ,NONE_SLEEP_T,SYS_FILES_DISABLED,DEBUG_ENABLED,COMMAND_DISABLED);
-		Device->setNetworkConfig("SSID","PWD");  
-	}  
+		device = new Device("PUBLIC_KEY","SECRET_KEY");
+		flame = new FLAME(IDflame,GPIOflame);
 
-*Recurso Rele* ::	
-	
+		device->setConfig(SYS_CPU_160MHZ,NONE_SLEEP_T,SYS_FILES_DISABLED,DEBUG_ENABLED,COMMAND_DISABLED);
+		device->setNetworkConfig("SSID","PASSWD");
+	}
+
+*Recurso Rele* ::
+
 	#include <user_config.h>
 	#include <SmingCore/SmingCore.h>
-	#include "device.h"
-	#include "rele.h"
+	#include "Device.h"
+	#include "Rele.h"
 
-	DEVICE *Device;
-	RELE *Rele;
+	Device *device;
+	Rele *rele;
 
 	void _Device();
 	void _Resource();
 
 	void _Device()
-	{	
-		Device->start();
+	{
+		device->start();
 		_Resource();
 	}
 
 	void _Resource()
-	{            
-		Rele->start();
+	{
+		rele->start();
 	}
 
 	//Station connected
 	void connected(IPAddress ip, IPAddress mask, IPAddress gateway)
-	{	
-		debugf("Connected");	
+	{
+		device->_ledRGB->color(GREEN);
+		debugf("Connected");
 		_Device();
 	}
 
@@ -194,47 +195,51 @@ Modo de Configuração Manual
 
 	void init()
 	{
-		Device = new DEVICE("SECRET_KEY","PUBLIC_KEY",);
-		Rele= new RELE(IDrele,GPIOxx);
-           
-		Device->setConfig(SYS_CPU_160MHZ,NONE_SLEEP_T,SYS_FILES_DISABLED,DEBUG_ENABLED,COMMAND_DISABLED);
-		Device->setNetworkConfig("SSID","PWD");  
-	}  	
+		device = new Device("PUBLIC_KEY","SECRET_KEY");
+		rele= new Rele(IDrele,GPIOrele);
+
+		//Set GPIO LED RGB
+    device->ledRGB->set(GPIOred,GPIOgreen,GPIOblue,ANODO-OR-CATODO);
+    device->ledRGB->color(RED);
+
+		device->setConfig(SYS_CPU_160MHZ,NONE_SLEEP_T,SYS_FILES_DISABLED,DEBUG_ENABLED,COMMAND_DISABLED);
+		device->setNetworkConfig("SSID","PASSWD");
+	}
 
 .. _Modo de Configuração WIFI:
 
 Modo de Configuração WIFI
 ~~~~~~~~~~~~~~~~~~~~~~~~~
-	
+
 *Recurso Rele com Led RGB* ::
 
 	#include <user_config.h>
 	#include <SmingCore/SmingCore.h>
-	#include "device.h"
-	#include "rele.h"
+	#include "Device.h"
+	#include "Rele.h"
 
-	DEVICE *Device;
-	RELE *Rele;
+	Device *device;
+	Rele *rele;
 
 	void _Device();
 	void _Resource();
 
 	void _Device()
-	{	
-		Device->start();
+	{
+		device->start();
 		_Resource();
 	}
 
 	void _Resource()
-	{            
-		Rele->start();
+	{
+		rele->start();
 	}
 
 	//Station connected
 	void connected(IPAddress ip, IPAddress mask, IPAddress gateway)
-	{	
+	{
 		debugf("Connected");
-		Device->_ledRGB->color(GREEN);	
+		device->_ledRGB->color(GREEN);
 		_Device();
 	}
 
@@ -246,52 +251,52 @@ Modo de Configuração WIFI
 	}
 
 	void init()
-	{    
-		Device=new DEVICE();   
-		Rele= new RELE(GPIOxx);    
-    
+	{
+		device=new Device();
+		rele= new Rele(GPIOrele);
+
 		//Set GPIO LED RGB
-		Device->_ledRGB->set(GPIOxx,GPIOxx,GPIOxx,CATODO);
-		Device->_ledRGB->color(RED);
-    
-		Device->setConfig(SYS_CPU_160MHZ,NONE_SLEEP_T,SYS_FILES_ENABLED,DEBUG_ENABLED,COMMAND_DISABLED);
-		Device->setNetworkConfig();        
-	}  
-	
-*Recurso WaterLevel - Com Led RGB e Reset GPIO* ::	
+		device->_ledRGB->set(GPIOred,GPIOgreen,GPIOblue,ANODO-OR-CATODO);
+		device->_ledRGB->color(RED);
+
+		device->setConfig(SYS_CPU_160MHZ,NONE_SLEEP_T,SYS_FILES_ENABLED,DEBUG_ENABLED,COMMAND_DISABLED);
+		device->setNetworkConfig();
+	}
+
+*Recurso WaterLevel* ::
 
 	#include <user_config.h>
 	#include <SmingCore/SmingCore.h>
-	#include "device.h"
-	#include "waterlevel.h"
+	#include "Device.h"
+	#include "Waterlevel.h"
 
 	void _Device();
 	void _Resource();
 
 	//CLASSES
-	DEVICE *Device; 
-	WATERLEVEL *WaterLevel; 
-         
+	Device *device;
+	Waterlevel *waterLevel;
+
 	void _Device()
-	{	    
+	{
 		// Ativa Device
-		Device->start();                
-	_Resource();
+		device->start();
+		_Resource();
 	}
 
 	void _Resource()
-	{        
-    
+	{
+
 		//WATER LEVEL
-		WaterLevel->setFilter(true);
-		WaterLevel->start();
+		waterLevel->setFilter(true);
+		waterLevel->start();
 	}
 
 	//Station connected
 	void connected(IPAddress ip, IPAddress mask, IPAddress gateway)
-	{	
-		Device->ledRGB->color(GREEN);
-		debugf("Connected");	
+	{
+		device->ledRGB->color(GREEN);
+		debugf("Connected");
 		_Device();
 	}
 
@@ -304,15 +309,12 @@ Modo de Configuração WIFI
 
 	void init()
 	{
-		Device = new DEVICE();    
-		WaterLevel = new WATERLEVEL(GPIO4,);
-    
+		device = new Device();
+		waterLevel = new Waterlevel(GPIO4,);
+
 		//Set GPIO LED RGB
-		Device->ledRGB->set(GPIO13,GPIO12,GPIO14,CATODO);
-		Device->ledRGB->color(RED);
-           
-		Device->setNetworkConfig();
-    
-		//Config GPIO to restart device
-		Device->setReset(GPIO2);        
-	}  		
+		device->_ledRGB->set(GPIOred,GPIOgreen,GPIOblue,ANODO-OR-CATODO);
+		device->_ledRGB->color(RED);
+
+		device->setNetworkConfig();
+	}

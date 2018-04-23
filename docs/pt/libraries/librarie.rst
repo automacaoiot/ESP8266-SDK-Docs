@@ -10,14 +10,17 @@ Biblioteca Common
 
 .. important:: Bibliotecas Common.
    Relação de bibliotecas common
-   
-   - base_device
-   - config
-   - device
-   - events
-   - json
-   - wificonfig
-   
+
+   - BaseDevice
+   - CallBackEvents
+   - Config
+   - Device
+   - Enum
+   - Json
+   - Request
+   - Struct
+   - WifiSetting
+
 
 
 
@@ -31,25 +34,25 @@ Biblioteca Resources
 .. important:: Bibliotecas Resources.
    Relação de bibliotecas resources
 
-   - beep
-   - dht
-   - flame
-   - hcsr04
-   - hcsr501
-   - ledrgb
-   - mq
-   - rele
-   - waterlevel
+   - Beep
+   - Dht
+   - Flame
+   - Hcsr04
+   - Hcsr501
+   - Ledrgb
+   - Mq
+   - Rele
+   - Waterlevel
 
 
 .. important:: Classe DHT
-   
+
    - DHT11;
    - DHT21; e
    - DHT22.
-   
+
 .. important:: Classe MQ
-   
+
    - MQ-2 (Gás e Fumaça);
    - MQ-3 (Àlcool); e
    - MQ-6 (GLP).
