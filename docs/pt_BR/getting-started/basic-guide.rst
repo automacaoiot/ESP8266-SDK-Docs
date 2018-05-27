@@ -53,3 +53,5 @@ Guia para a configuração e instalação do Docker_ ESP8266.
 
 .. _Docker: https://esp8266-docker.readthedocs.io/
 
+.. image:: ../imagem/docker.jpg
+    :align: center
