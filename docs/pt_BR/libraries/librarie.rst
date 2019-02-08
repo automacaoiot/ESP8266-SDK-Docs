@@ -1,28 +1,20 @@
-Bibliotecas SDK-ESP8266
-=======================
+Bibliotecas SDK-ESP
+===================
 
 .. _Biblioteca Common:
 
 Biblioteca Common
 ~~~~~~~~~~~~~~~~~
 
-É representado pelo conjunto de classes e métodos comum a todas as classes da biblioteca *Resources*.
+É representado pelo conjunto de classes e métodos comum a todas as classes da biblioteca Resources.
 
 .. important:: Bibliotecas Common.
    Relação de bibliotecas common
 
-   - BaseDevice
-   - CallBackEvents
-   - Config
+   - Api
    - Device
-   - Enum
-   - Json
-   - Request
-   - Struct
-   - WifiSetting
-
-
-
+   - Resource
+   - Wifi
 
 .. _Biblioteca Resources:
 
@@ -34,25 +26,13 @@ Biblioteca Resources
 .. important:: Bibliotecas Resources.
    Relação de bibliotecas resources
 
-   - Beep
    - Dht
-   - Flame
-   - Hcsr04
-   - Hcsr501
-   - Ledrgb
-   - Mq
+   - Ds1820
+   - Led
    - Rele
-   - Waterlevel
-
 
 .. important:: Classe DHT
 
    - DHT11;
    - DHT21; e
    - DHT22.
-
-.. important:: Classe MQ
-
-   - MQ-2 (Gás e Fumaça);
-   - MQ-3 (Àlcool); e
-   - MQ-6 (GLP).

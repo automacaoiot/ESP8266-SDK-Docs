@@ -57,8 +57,8 @@ source_encoding = 'utf-8'
 master_doc = 'index'
 
 # General information about the project.
-project = 'SDK ESP-8266 Docs'
-copyright = '2017, Automacao-IOT'
+project = 'SDK ESP Docs'
+copyright = '2019, Automacao-IOT'
 author = 'Automacao IOT'
 
 # The version info for the project you're documenting, acts as replacement for
@@ -126,7 +126,7 @@ html_sidebars = {
 # -- Options for HTMLHelp output ------------------------------------------
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'SdkESP8266doc'
+htmlhelp_basename = 'SdkESPdoc'
 
 
 # -- Options for LaTeX output ---------------------------------------------
@@ -153,7 +153,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'SDKESP8266Docs.tex', 'SDK ESP8266 Docs Documentation',
+    (master_doc, 'SDKESPDocs.tex', 'SDK ESP Docs Documentation',
      'Automacao IOT', 'manual'),
 ]
 
@@ -163,7 +163,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'SDKESP8266docs', 'SDK ESP8266 Docs Documentation',
+    (master_doc, 'SDKESPdocs', 'SDK ESP Docs Documentation',
      [author], 1)
 ]
 
@@ -174,7 +174,7 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'SDKESP8266Docs', 'SDK ESP8266 Docs Documentation',
-     author, 'SDKESP8266Docs', 'One line description of project.',
+    (master_doc, 'SDKESPDocs', 'SDK ESP Docs Documentation',
+     author, 'SDKESPDocs', 'One line description of project.',
      'Miscellaneous'),
 ]

@@ -1,8 +1,8 @@
 ﻿Guia Básico
 ------------
 
-SDK ESP8266 é o kit de desenvolvimento de software pra os projetos relativos a Automação-IOT, baseados no hardware ESP8266 Nodemcu.  
-Este SDK foi baseado no projeto Sming (Open Source framework for high efficiency native ESP8266 development http://sminghub.github.io/Sming/). 
+SDK ESP é o kit de desenvolvimento de software pra os projetos relativos a Automação-IOT, baseados no hardware ESP8266 ou ESP32 Nodemcu.  
+Este SDK foi baseado no projeto MicroPython (http://micropython.org/). 
 
 .. _ESP8266:
 
@@ -44,14 +44,33 @@ Pinagem :
   D10    01  
 ====== ====== 
 
-.. _Docker ESP8266:
+.. _ESP32:
 
-Docker ESP8266
-~~~~~~~~~~~~~~
+ESP32
+~~~~~
 
-Guia para a configuração e instalação do Docker_ ESP8266.
+- Protocolo 802.11 b/gn
+- WiFi: 2,4 GHz, 802.11 b/g/n
+- Bluetooth: Bluetooth Low Energy v4.2 (BLE)
+- 1  Sensor de temperatura interno
+- 1 Sensor de efeito Hall
 
-.. _Docker: https://esp8266-docker-docs.readthedocs.io/en/latest/index.html
+Pinagem ESP32
+~~~~~~~~~~~~~
 
-.. image:: ../imagem/docker.jpg
+.. image:: ../imagem/pinagem-ESP32.png
+    :align: center   
+
+
+.. _Projeto MicroPython:
+
+Projeto MicroPython
+~~~~~~~~~~~~~~~~~~~
+
+Projeto Micropython, que possui como foco principal a implementação do Python 3.X em pequenos sistemas embarcados.
+
+
+.. _MicroPython: 
+
+.. image:: ../imagem/micropython.jpg
     :align: center

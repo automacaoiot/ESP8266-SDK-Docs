@@ -1,4 +1,4 @@
-﻿SDK-ESP8266 Automação-IOT Documentação
+﻿SDK-ESP Automação-IOT Documentação
 =======================================
 
 If you are looking for the english documentation go to `here`_.
